@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content="Mekanik Pro - Digital Workshop Manual & Wiring Kelistrikan Motor" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <title>Mekanik Pro - Manual Kelistrikan Digital</title>
+    
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #f0f0f0;
+        margin: 0;
+        font-family: sans-serif;
+        overscroll-behavior-y: none;
+        
+        /* BIKIN RASA APLIKASI NATIVE: Hilangin blok warna pas tombol diklik */
+        -webkit-tap-highlight-color: transparent;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Menyembunyikan scrollbar bawaan browser biar makin mirip Aplikasi Native */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#0a0a0a',
+              card: '#161616',
+              accent: '#d97706',
+              border: '#262626'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('Mode PWA Siap!');
+          }).catch(error => {
+            console.log('PWA Gagal:', error);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

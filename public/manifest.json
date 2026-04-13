@@ -1,0 +1,40 @@
+{
+  "short_name": "MekanikPro",
+  "name": "Mekanik Pro - Manual Kelistrikan Digital",
+  "description": "Aplikasi pendamping mekanik untuk skema kelistrikan dan diagnosis motor.",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0a0a",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#d97706",
+  "shortcuts": [
+    {
+      "name": "Cari Skema",
+      "short_name": "Skema",
+      "description": "Langsung buka database skema",
+      "url": "/#schematics",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Kalkulator Kabel",
+      "short_name": "Kalkulator",
+      "description": "Hitung beban kelistrikan",
+      "url": "/#calculator",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
