@@ -1,28 +1,23 @@
 /**
- * Version: 2.2.0 (Modern Offline Cache)
+ * Version: 2.3.0 (Security Upgrade)
  * Changelog: 
- * - FIX: Mengganti enableIndexedDbPersistence yang deprecated.
- * - UPGRADE: Menggunakan initializeFirestore dengan persistentLocalCache.
- * - Mendukung persistentMultipleTabManager (Aman dibuka di banyak tab/window).
+ * - Menyembunyikan kredensial ke dalam file .env untuk membungkam GitHub Secret Scanner.
  */
 import { initializeApp } from 'firebase/app';
-// Ganti getFirestore jadi initializeFirestore untuk akses metode cache modern
 import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  // PASTIKAN INI API KEY ASLI MILIK LU
-  apiKey: "AIzaSyDIExJP9zUwnra26OFl1f1zgyO_yKzmMrk",
-  authDomain: "mekanikpro-4ef01.firebaseapp.com",
-  projectId: "mekanikpro-4ef01",
-  storageBucket: "mekanikpro-4ef01.firebasestorage.app",
-  messagingSenderId: "570974417754",
-  appId: "1:570974417754:web:eaa2a1af5cef649e9e7963"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
 
-// METODE OFFLINE MODE TERBARU (ANTI DEPRECATED WARNING)
 export const db = initializeFirestore(app, {
   localCache: persistentLocalCache({
     tabManager: persistentMultipleTabManager()
