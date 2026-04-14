@@ -69,7 +69,7 @@ const FormSkema: React.FC<Props> = ({ onBack }) => {
   const fetchGalleryFromBackend = async () => {
     setIsLoadingGallery(true); setShowGalleryModal(true);
     try {
-      const res = await fetch('http://localhost:3000/api/gallery');
+      const res = await fetch('/api/gallery');
       if (!res.ok) throw new Error('Server ditolak');
       setGalleryImages(await res.json());
     } catch (err) {

@@ -1,3 +1,43 @@
-echo "node_modules/" > .gitignore
-echo "dist/" >> .gitignore
-echo ".env" >> .gitignore
+# ==========================================
+# MEKANIK PRO - GIT IGNORE (ULTIMATE)
+# ==========================================
+
+# 1. DEPENDENCIES (SI GAJAH)
+# Ini bakal hapus node_modules di folder root
+node_modules/
+# Ini khusus buat nangkep node_modules yang di dalem folder backend
+backend/node_modules/
+# Opsional: jaga-jaga kalau ada folder lib lain
+jspm_packages/
+typings/
+
+# 2. BUILD OUTPUTS
+dist/
+dist-ssr/
+*.local
+build/
+
+# 3. SECRETS & ENVIRONMENT (PENTING!)
+# Biar nggak dapet surat cinta peringatan dari GitHub lagi
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 4. LOGS
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 5. OS & EDITOR FILES
+.DS_Store
+thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
